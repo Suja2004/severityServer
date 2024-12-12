@@ -5,10 +5,8 @@ import numpy as np
 
 app = Flask(__name__)
 
-# Enable CORS for specific origin (React app)
-CORS(app, origins=["http://localhost:5173"])  # Adjust for your React app's URL
+CORS(app)  
 
-# Load saved artifacts
 model = joblib.load('best_model.pkl')
 scaler = joblib.load('scaler.pkl')
 label_mappings = joblib.load('label_encoder.pkl')
